@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Constituencies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Mandate number</th>
+      <th>Authorized number</th>
+      <th>Empty votes</th>
+      <th>Many votes</th>
+      <th>Other votes</th>
+      <th>Given cards</th>
+      <th>Urn cards</th>
+      <th>Province</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @constituencies.each do |constituency| %>
+      <tr>
+        <td><%= constituency.number %></td>
+        <td><%= constituency.mandate_number %></td>
+        <td><%= constituency.authorized_number %></td>
+        <td><%= constituency.empty_votes %></td>
+        <td><%= constituency.many_votes %></td>
+        <td><%= constituency.other_votes %></td>
+        <td><%= constituency.given_cards %></td>
+        <td><%= constituency.urn_cards %></td>
+        <td><%= constituency.province %></td>
+        <td><%= link_to 'Show', constituency %></td>
+        <td><%= link_to 'Edit', edit_constituency_path(constituency) %></td>
+        <td><%= link_to 'Destroy', constituency, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Constituency', new_constituency_path %>

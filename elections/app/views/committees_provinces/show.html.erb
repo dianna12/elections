@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Committee:</strong>
+  <%= @committees_province.committee %>
+</p>
+
+<p>
+  <strong>Province:</strong>
+  <%= @committees_province.province %>
+</p>
+
+<%= link_to 'Edit', edit_committees_province_path(@committees_province) %> |
+<%= link_to 'Back', committees_provinces_path %>

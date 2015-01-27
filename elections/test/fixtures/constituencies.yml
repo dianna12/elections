@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  mandate_number: 1
+  authorized_number: 1
+  empty_votes: 1
+  many_votes: 1
+  other_votes: 1
+  given_cards: 1
+  urn_cards: 1
+  province_id: 
+
+two:
+  number: 1
+  mandate_number: 1
+  authorized_number: 1
+  empty_votes: 1
+  many_votes: 1
+  other_votes: 1
+  given_cards: 1
+  urn_cards: 1
+  province_id: 

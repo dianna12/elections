@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Committees Provinces</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Committee</th>
+      <th>Province</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @committees_provinces.each do |committees_province| %>
+      <tr>
+        <td><%= committees_province.committee %></td>
+        <td><%= committees_province.province %></td>
+        <td><%= link_to 'Show', committees_province %></td>
+        <td><%= link_to 'Edit', edit_committees_province_path(committees_province) %></td>
+        <td><%= link_to 'Destroy', committees_province, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Committees province', new_committees_province_path %>
