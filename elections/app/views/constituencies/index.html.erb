@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Number</th>
+      <th>Name</th>
       <th>Mandate number</th>
       <th>Authorized number</th>
       <th>Empty votes</th>
@@ -21,7 +21,7 @@
   <tbody>
     <% @constituencies.each do |constituency| %>
       <tr>
-        <td><%= constituency.number %></td>
+        <td><%= constituency.name %></td>
         <td><%= constituency.mandate_number %></td>
         <td><%= constituency.authorized_number %></td>
         <td><%= constituency.empty_votes %></td>
@@ -29,7 +29,11 @@
         <td><%= constituency.other_votes %></td>
         <td><%= constituency.given_cards %></td>
         <td><%= constituency.urn_cards %></td>
-        <td><%= constituency.province %></td>
+        <% if constituency.province %>
+          <td><%= constituency.province.name %></td>
+          <% else %>
+            <td><%= constituency.province %></td>
+        <% end %>
         <td><%= link_to 'Show', constituency %></td>
         <td><%= link_to 'Edit', edit_constituency_path(constituency) %></td>
         <td><%= link_to 'Destroy', constituency, method: :delete, data: { confirm: 'Are you sure?' } %></td>

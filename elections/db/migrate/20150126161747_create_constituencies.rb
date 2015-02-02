@@ -1,7 +1,7 @@
 class CreateConstituencies < ActiveRecord::Migration
   def change
     create_table :constituencies do |t|
-      t.integer :number
+      t.string  :name
       t.integer :mandate_number
       t.integer :authorized_number
       t.integer :empty_votes

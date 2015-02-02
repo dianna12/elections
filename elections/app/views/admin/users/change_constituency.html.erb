@@ -1,0 +1,10 @@
+<%= form_for @user do |f| %>
+<p>
+<%= f.label :constituency %> <br />
+<%= f.select :constituency_id, @options_for_select(@con) %>
+
+<p><%= f.submit "Submit" %> </p>
+<% end %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>

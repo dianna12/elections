@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150126162202) do
+ActiveRecord::Schema.define(version: 20150128163810) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20150126162202) do
   add_index "committees_provinces", ["province_id"], name: "index_committees_provinces_on_province_id"
 
   create_table "constituencies", force: :cascade do |t|
-    t.integer  "number"
+    t.string   "name"
     t.integer  "mandate_number"
     t.integer  "authorized_number"
     t.integer  "empty_votes"
@@ -84,6 +84,22 @@ ActiveRecord::Schema.define(version: 20150126162202) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "login"
+    t.string   "password"
+    t.string   "email"
+    t.string   "role"
+    t.integer  "constituency_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "crypted_password"
+    t.string   "persistence_token"
+    t.boolean  "admin"
+    t.string   "password_salt"
+  end
+
+  add_index "users", ["constituency_id"], name: "index_users_on_constituency_id"
 
   create_table "votes", force: :cascade do |t|
     t.integer  "number"

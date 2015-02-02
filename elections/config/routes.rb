@@ -1,17 +1,61 @@
 Rails.application.routes.draw do
-  resources :votes
+get 'static/index'
 
-  resources :committees_provinces
+devise_for :admin_users, ActiveAdmin::Devise.config
+ActiveAdmin.routes(self)
+resource :user_session, :only => [:new, :create, :destroy]
+resources :users
+resources :votes
+resources :committees_provinces
+resources :committees
+resources :provinces
+resources :constituencies
+root :to => 'static#index'
+get 'login' => 'user_sessions#new', :as => :login
+get 'logout' => 'user_sessions#destroy', :as => :logout
+#Rails.application.routes.draw do
+#  get 'user_sessions/destroy'
 
-  resources :committees
+#  get 'user_sessions/new'
 
-  resources :provinces
+#  get 'user_sessions/create'
 
-  resources :constituencies
+#  get 'users/new'
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  # The priority is based upon order of creation: first created -> highest priority.
+#  get 'users/create'
+
+#  get 'users/edit'
+
+#  get 'users/update'
+
+#  resources :users
+
+#  resources :votes
+
+#  resources :committees_provinces
+
+#  resources :committees
+
+#  resources :provinces
+
+#  resources :constituencies
+
+#  devise_for :admin_users, ActiveAdmin::Devise.config
+#  ActiveAdmin.routes(self)
+
+# # AuthlogicV3::Application.routes.draw do
+#  get 'user_sessions/destroy'
+
+#  get 'user_sessions/new'
+
+#  get 'user_sessions/create'
+
+#    resources :users, :only => [:new, :create, :edit, :update]
+#    # get "users/new"
+#    # get "users/edit"
+#    #...
+# #end
+#  # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
