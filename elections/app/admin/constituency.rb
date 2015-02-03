@@ -11,7 +11,6 @@ permit_params :province, :province_id, :name, :mandate_number, :authorized_numbe
     column :many_votes
     column :other_votes
     column :given_cards
-    column :urn_cards 
     actions 
  end
 end

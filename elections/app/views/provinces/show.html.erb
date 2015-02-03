@@ -4,6 +4,15 @@
   <strong>Name:</strong>
   <%= @province.name %>
 </p>
+<p>
+  <strong>Mandate number:</strong>
+  <%= @province.mandate_number %>
+</p>
+
+<p>
+  <strong>Authorized number:</strong>
+  <%= @province.authorized_number %>
+</p>
 
 <%= link_to 'Edit', edit_province_path(@province) %> |
 <%= link_to 'Back', provinces_path %>

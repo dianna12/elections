@@ -8,7 +8,7 @@ class Constituency < ActiveRecord::Base
   validates :many_votes, presence: true, numericality: true
   validates :other_votes, presence: true, numericality: true
   validates :given_cards, presence: true, numericality: true
-  validates :urn_cards, presence: true, numericality: true
+ 
 
   def set_constituencies
     @constituencies = Constituency.all.map do |constituency|
