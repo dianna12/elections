@@ -45,5 +45,6 @@ group :development, :test do
   gem 'devise'
   #gem authlogic
   gem 'authlogic'
+  gem "paperclip", "~> 4.2"
 end
 

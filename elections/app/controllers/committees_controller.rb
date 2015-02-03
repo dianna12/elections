@@ -9,21 +9,46 @@ class CommitteesController < InheritedResources::Base
   end
 
   def show
+    @committee = Committee.find(params[:id])
   end
 
   def create
-    @committee = Committee.new(committee_params)
+    @committee = Committee.create(committee_params)
+    respond_to do |format|
     if @committee.save
-      flash[:notice] = "Successfully added."
-      redirect_to root_url
+      format.html { redirect_to @committee, notice: 'Committee was successfully created.' }
+      format.json { render :show, status: :created, location: @committee }
     else
-      flash[:notice] = "There was a problem."
-      render :action => :new
+      format.html { render :new }
+      format.json { render json: @committee.errors, status: :unprocessable_entity }
+    end
   end
 end
 
-private
-  def committee_params
-    params.require(:committee).permit(:name, :logo, :image)
+  def edit
+    @committee = Committee.find(params[:id])
   end
+
+  #def update
+  #  respond_to do |format|
+  #    if @committee.update(committee_params)
+  #      format.html { redirect_to @committee, notice: 'Committee was successfully updated.' }
+  #      format.json { render :show, status: :ok, location: @committee }
+  #    else
+  #      format.html { render :edit }
+  #      format.json { render json: @committee.errors, status: :unprocessable_entity }
+  #    end
+  #  end
+  #end
+
+  def set_committee
+    @committee = Committee.find(params[:id])
+  end
+  
+  def committee_params
+    params.require(:committee).permit(:name, :avatar)
+  end
+  
 end
+
+

@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>Logo:</strong>
-  <%= @committee.logo %>
+	<%= image_tag @committee.avatar.url %>
+  
 </p>
 
 <%= link_to 'Edit', edit_committee_path(@committee) %> |
