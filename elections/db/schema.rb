@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150128163810) do
+ActiveRecord::Schema.define(version: 20150203143400) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -48,9 +48,11 @@ ActiveRecord::Schema.define(version: 20150128163810) do
 
   create_table "committees", force: :cascade do |t|
     t.string   "name"
-    t.string   "logo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "logo_file_name"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "logo_file_size"
+    t.string   "logo_content_type"
   end
 
   create_table "committees_provinces", force: :cascade do |t|
@@ -97,6 +99,7 @@ ActiveRecord::Schema.define(version: 20150128163810) do
     t.string   "persistence_token"
     t.boolean  "admin"
     t.string   "password_salt"
+    t.string   "password_digest"
   end
 
   add_index "users", ["constituency_id"], name: "index_users_on_constituency_id"

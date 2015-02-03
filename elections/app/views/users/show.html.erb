@@ -1,29 +1,15 @@
 <p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Login:</strong>
-  <%= @user.login %>
+<strong>Login:</strong>
+<%= @user.login %>
 </p>
-
 <p>
-  <strong>Password:</strong>
-  <%= @user.password %>
+<strong>Role:</strong>
+<%= @user.role %>
 </p>
-
 <p>
-  <strong>Email:</strong>
-  <%= @user.email %>
+<strong>Constituency:</strong>
+<%= @user.constituency_id %>
 </p>
-
-<p>
-  <strong>Role:</strong>
-  <%= @user.role %>
-</p>
-
-<p>
-  <strong>Constituency:</strong>
-  <%= @user.constituency %>
-</p>
-
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

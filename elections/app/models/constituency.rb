@@ -10,10 +10,10 @@ class Constituency < ActiveRecord::Base
   validates :given_cards, presence: true, numericality: true
   validates :urn_cards, presence: true, numericality: true
 
-def set_constituencies
-  @constituencies = Constituency.all.map do |constituency|
-    [ constituency.name, constituency.id ]
-    return constituencies
+  def set_constituencies
+    @constituencies = Constituency.all.map do |constituency|
+      [ constituency.name, constituency.id]
+    return @constituencies
   end
 end
 end

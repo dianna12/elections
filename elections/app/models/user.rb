@@ -1,8 +1,11 @@
 class User < ActiveRecord::Base
   belongs_to :constituency
-  has_secure_password
+#  has_secure_password
 
   ROLES = %w[local central admin]
+  def user_params 
+    params.require(:user).permit(:admin) 
+  end
   
   acts_as_authentic do |config|
     config.validate_login_field = false
@@ -16,10 +19,10 @@ class User < ActiveRecord::Base
     ROLES.index(base_role.to_s) <= ROLES.index(role)
   end
   def set_constituencies
-  @constituencies = Constituency.all.map do |constituency|
-    [ constituency.name, constituency.id ]
-    return constituencies
-  end
+    @constituencies = Constituency.all.map do |constituency|
+      [constituency.name, constituency.id]
+    #return @constituencies
+    end
 end
 
 end

@@ -1,0 +1,4 @@
+class AddDetailsToCommittees < ActiveRecord::Migration
+  def change
+  end
+end
