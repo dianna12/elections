@@ -16,8 +16,16 @@
     <% @votes.each do |vote| %>
       <tr>
         <td><%= vote.number %></td>
-        <td><%= vote.committee %></td>
-        <td><%= vote.constituency %></td>
+        <% if vote.committee %>
+          <td><%= vote.committee.name %></td>
+          <% else %>
+            <td><%= vote.committee %></td>
+        <% end %>
+        <% if vote.constituency %>
+          <td><%= vote.constituency.name %></td>
+          <% else %>
+            <td><%= vote.constituency %></td>
+        <% end %>
         <td><%= link_to 'Show', vote %></td>
         <td><%= link_to 'Edit', edit_vote_path(vote) %></td>
         <td><%= link_to 'Destroy', vote, method: :delete, data: { confirm: 'Are you sure?' } %></td>

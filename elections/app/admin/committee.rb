@@ -1,5 +1,5 @@
 ActiveAdmin.register Committee do
-  permit_params :name, :image, :avatar_file_name
+  permit_params :name, :image, :avatar
   index :as => :grid do |committee|
     div do
       a :href => admin_committee_path(committee) do

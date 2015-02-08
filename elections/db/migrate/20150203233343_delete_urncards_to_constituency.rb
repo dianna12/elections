@@ -1,5 +1,5 @@
 class DeleteUrncardsToConstituency < ActiveRecord::Migration
-	remove_column :constituencies, :urn_cards
   def change
+  	remove_column :constituencies, :urn_cards
   end
 end
