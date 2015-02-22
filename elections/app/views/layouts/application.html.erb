@@ -7,6 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
+		<% if current_user %> 
+		Zalogowany jako <strong><%= current_user.login %> </strong>
+		<i class="fa fa-lock"></i><%= link_to "Wyloguj się", :logout %>
+		<% else %> 
+		<i class="fa fa-lock"></i><%= link_to "Zaloguj się", :login %> 
+		<% end %> 
+	<p id="notice"><%= notice %></p>
 
 <%= yield %>
 

@@ -1,6 +1,20 @@
-<h1>Editing Vote</h1>
+<h1>Edytuj liczbę głosów w okręgu:<strong><%= @vote.constituency.name %></strong> na partię: <strong><%= @vote.committee.name %></strong> </h1>
 
-<%= render 'form' %>
+<%#= render 'form' %>
 
-<%= link_to 'Show', @vote %> |
-<%= link_to 'Back', votes_path %>
+<%= form_for(@vote) do |f| %>
+
+  <div class="field">
+  	<%= f.hidden_field :committee_id, :value => @com %>
+  	<%= f.hidden_field :constituency_id, :value => @cons %>
+    <%= f.label :Liczba_gosów %><br>
+    <%= f.number_field :number %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Pokaż', @vote %> |
+<%= link_to 'Powrót', form_index_path %>

@@ -16,4 +16,18 @@ permit_params :number, :committee, :committee_id, :constituency, :constituency_i
       f.actions
     end
   end
+
+#show do
+#  table_for vote.constituency do
+#    column "Empty Votes" do |constituency|
+#      constituency.empty_votes
+#    end
+#    column "Many Votes" do |constituency|
+#      constituency.many_votes
+#    end
+#    column "Other Votes" do |constituency|
+#      constituency.other_votes
+#    end
+#  end
+#end
 end

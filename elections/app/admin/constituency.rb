@@ -13,4 +13,5 @@ permit_params :province, :province_id, :name, :mandate_number, :authorized_numbe
     column :given_cards
     actions 
  end
+    
 end

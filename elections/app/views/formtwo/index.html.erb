@@ -1,0 +1,24 @@
+
+<h1>Głosy nieważne dla okręgu: <strong><%= @constituency.name %><strong></h1>
+  
+  
+  <table>
+  <tr>
+    <th>Liczba pustych kart w urnie:</th>
+    <th>Liczba kart ze zbyt dużą ilością głosów:</th>
+    <th>Inne przyczyny nieważności głosów:</th>
+  </tr>
+  <tr>
+    <% if @constituency.empty_votes == nil && @constituency.many_votes==nil && @constituency.other_votes==nil  %>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    <% else %>
+    <td><%= @constituency.empty_votes %></td>
+    <td><%= @constituency.many_votes %></td>
+    <td><%= @constituency.other_votes %></td>
+    <% end %>
+  </tr>
+</table>
+ <p><%= link_to 'Edit', edit_formtwo_path(@user) %></p><br>
+ <h3><%= link_to 'wprowadź głosy ważne', form_index_path %></h3>

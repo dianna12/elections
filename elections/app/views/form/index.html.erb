@@ -1,0 +1,32 @@
+
+<h1>Głosy ważne dla okręgu:<strong><%= @con %></strong> </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Liczba głosów</th>
+      <th>Nazwa partii</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @votes.each do |vote| %>
+      <tr>
+        <td><%= vote.number %></td>
+        <% if vote.committee %>
+          <td><%= vote.committee.name %></td>
+          <% else %>
+            <td><%= vote.committee %></td>
+        <% end %>
+        <td><%= link_to 'Edytuj', edit_vote_path(vote) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<p>
+<%= link_to 'dodaj nowy głos', list_path %>
+<h3><%= link_to 'wprowadź głosy nieważne', formtwo_index_path %></h3>
+</p>

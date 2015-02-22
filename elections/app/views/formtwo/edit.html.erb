@@ -1,0 +1,32 @@
+<h1>Edytuj ilość nieważnych głosów:</h1>
+<%#= render 'form' %>
+
+<%= form_for(@constituenc) do |f| %>
+  <div class="field">
+    <%#= f.label :name %><br>
+    <%= f.hidden_field :name, :value => @constituenc.name %>
+    <%#= f.label :authorized_number %><br>
+    <%= f.hidden_field :authorized_number, :value => @constituenc.authorized_number %>
+    <%= f.hidden_field :province_id, :value => @prov %>
+    <%= f.hidden_field :mandate_number, :value => @constituenc.mandate_number %>
+    <%= f.hidden_field :given_cards, :value => @constituenc.given_cards %>
+  </div>
+  <div class="field">
+    <%= f.label :Liczba_pustych_kart_w_urnie %><br>
+    <%= f.number_field :empty_votes %>
+  </div>
+  <div class="field">
+    <%= f.label :Liczba_kart_ze_zbyt_dużą_ilością_głosów %><br>
+    <%= f.number_field :many_votes %>
+  </div>
+  <div class="field">
+    <%= f.label :Inne_przyczyny_nieważności_głosów %><br>
+    <%= f.number_field :other_votes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+ <% end %> 
+
+<%= link_to 'Back', formtwo_index_path %>

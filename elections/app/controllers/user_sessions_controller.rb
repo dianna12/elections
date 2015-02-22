@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = "Successfully logged in."
-      redirect_to root_url
+      redirect_to root_url #edit_constituency_path(@user.constituency_id)
     else
       render :action => 'new'
     end

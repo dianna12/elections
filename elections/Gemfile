@@ -46,5 +46,6 @@ group :development, :test do
   #gem authlogic
   gem 'authlogic'
   gem "paperclip", "~> 4.2"
+  gem 'cancancan', '~> 1.10'
 end
 

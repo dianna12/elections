@@ -1,10 +1,6 @@
 <h1>Elections</h1>
 <nav>
-<% if current_user %>
-<%= link_to "Edit profile", edit_user_path(current_user.id)%>
-<%= link_to "Log out", :logout%>
-<% else %>
-<%= link_to "Registration", new_user_path%> |
-<%= link_to "Log in", :login %>
+<% if current_user %> 
+  <% controller.redirect_to :controller=>"formtwo", :action => "index" %>
 <% end %>
 </nav>

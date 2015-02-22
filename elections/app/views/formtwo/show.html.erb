@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Empty votes:</strong>
+  <%= @constituency.empty_votes %>
+</p>
+
+<p>
+  <strong>Many votes:</strong>
+  <%= @constituency.many_votes %>
+</p>
+
+<p>
+  <strong>Other votes:</strong>
+  <%= @constituency.other_votes %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_committees_province_path(@committees_province) %> |
+<%= link_to 'Back', committees_provinces_path %>

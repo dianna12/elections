@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Number:</strong>
@@ -7,13 +6,15 @@
 
 <p>
   <strong>Committee:</strong>
-  <%= @vote.committee %>
+  <%= @vote.committee.name %>
 </p>
 
 <p>
   <strong>Constituency:</strong>
-  <%= @vote.constituency %>
+  <%= @vote.constituency.name %>
 </p>
 
+<p>
 <%= link_to 'Edit', edit_vote_path(@vote) %> |
-<%= link_to 'Back', votes_path %>
+<%= link_to 'Back', form_index_path %>
+</p>

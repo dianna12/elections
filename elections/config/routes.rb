@@ -9,7 +9,12 @@ resources :votes
 resources :committees_provinces
 resources :committees
 resources :provinces
+get 'provinces/:id/frekwencja' => 'provinces#frekwencja', :as => :provinces_frekwencja
 resources :constituencies
+get 'constituencies/:id/frekwencja' => 'constituencies#frekwencja', :as => :constituencies_frekwencja
+resources :form
+get 'list' => 'form#list', :as => :list
+resources :formtwo, :only => [:index, :edit]
 root :to => 'static#index'
 get 'login' => 'user_sessions#new', :as => :login
 get 'logout' => 'user_sessions#destroy', :as => :logout

@@ -1,0 +1,22 @@
+<h1>Głosy ważne: </h1>
+  <% @committees.each do |committee| %>
+    <%= render "committees/committees_row", committee: committee %>
+    <%= form_for(@vote) do |f| %>
+    <%#form_for="vote.number"
+    <p>Liczba głosów</p>
+	<input type="number" name="vote.number" />%>
+	<%= f.hidden_field :constituency_id, :value => @const %>
+	<%= f.hidden_field :committee_id, :value => committee.id %>
+	<div class="field">
+    <%= f.label :Liczba_głosów %><br>
+    <%= f.number_field :number %>
+    </div>
+    <div class="actions">
+    <%= f.submit %>
+    </div>
+    <% end %>
+  <% end %>
+
+<p>
+<%= link_to 'Powrót', form_index_path %>
+</p>

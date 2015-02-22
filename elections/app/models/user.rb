@@ -24,5 +24,8 @@ class User < ActiveRecord::Base
     #return @constituencies
     end
 end
+def local?
+  self.role == "local"
+end
 
 end

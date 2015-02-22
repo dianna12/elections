@@ -18,6 +18,7 @@
         <td><%= province.name %></td>
         <td><%= province.mandate_number %></td>
         <td><%= province.authorized_number %></td>
+        <td><%= link_to 'Frekwencja', provinces_frekwencja_path(province) %></td>
         <td><%= link_to 'Show', province %></td>
         <td><%= link_to 'Edit', edit_province_path(province) %></td>
         <td><%= link_to 'Destroy', province, method: :delete, data: { confirm: 'Are you sure?' } %></td>
